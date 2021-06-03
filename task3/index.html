@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0, user-scalable=0">
+    <meta http=equiv="X-UA-Corpalible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title> Nike UI </title>
+    <script>
+      // const previewImg = "./nike trans 1.png";
+      // document.getElementById("imageid").src= previewImg;
+    </script>
+    
+</head>
+<body>
+<header>
+    <nav>
+        <ul class="menu">
+           <img class="logo1" src="logo.png">
+          <li class="item"><a href="#">MEN</a></li>
+          <li class="item"><a href="#">WOMEN</a></li>
+          <li class="item">
+            <a tabindex="0">KIDS</a>
+            
+          </li>
+          <li class="item">
+            <a tabindex="0">FAVOURITES</a>
+           
+          </li>
+          <li class="item"><a href="#">COSTOMIZE</a></li>
+          </li>
+          <li class="toggle"><a href="#" onclick="myFunction()"><i class="fas fa-bars"></i></a>
+          </li>
+          <li class="item mt-3"><input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+            aria-describedby="search-addon" /></li>
+        </ul>
+        
+        <div class="toggle p-0 d-lg-none " id="myLinks" style="display: none;background:#EEEAEA;text-align: left !important">
+          <ul style="position: absolute;z-index: 100;background:#EEEAEA;width:97%">
+            <li><a class="font-weight-bold" href="#" style="color: #000 ;padding: 10px;">MEN</a></li>
+            <li><a class="font-weight-bold" href="#" style="color: #000;padding: 10px;">WOMEN</a></li>
+            <li><a class="font-weight-bold" href="#" style="color: #000;padding: 10px;">KIDS</a></li>
+            <li><a class="font-weight-bold" href="#" style="color: #000;padding: 10px;">FAVOURITES</a></li>
+            <li><a class="font-weight-bold" href="#" style="color: #000;padding: 10px;">COSTOMIZE</a></li>
+        </ul>
+        </div>
+      </nav>
+</header> 
+<div class="row">
+  <div class="col-12 d-lg-none p-3 d-flex justify-content-between align-items-center" style="background: #EEEAEA;">
+    <input type="search" class="form-control rounded ml-5" placeholder="Search" aria-label="Search"
+            aria-describedby="search-addon" />
+  </div>
+<div class="col-3 d-none d-lg-block">
+  <h1 class="firsth1">NiKE</h1>
+  <h1 class="secondh1">Self-Lacing </h1>
+  <h1 class="thirdh1">Shoes</h1>
+  <p>A backthrough lacing system that adjusts to the shape of the feet</p>
+  <p style="font-weight:bold;">$520</p>
+  <button>BUY NOW </button>
+</div>
+
+<div class="col-lg-9 col-12 background">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12 d-flex align-items-center justify-content-center">
+        <div class="d-lg-none mobileheader1">
+          <h1 class="mobileheader">NiKE</h1>
+  <h1 class="mobileheader">Self-Lacing </h1>
+  <h1 class="mobileheader">Shoes</h1>
+        </div>
+        <img id="imageid" src="./nike trans 1.png" style="width: 349px; height: 231px;" class="mt-5">
+        </div>
+      <div class="col-4 d-flex align-items-center justify-content-center mb-5" >
+         <div class="pre-img d-flex align-items-center justify-content-center">
+           <img style="background: #FFFCFC;cursor: pointer;" src="./nike trans 1.png" onclick="show_image('./nike trans 1.png')">
+         </div>
+      </div>
+      <div class="col-4 d-flex align-items-center justify-content-center mb-5">
+        <div class="pre-img ">
+      <img style="background: #FFFCFC;cursor: pointer;" src="./nike-black 1.png" onclick="show_image('./nike-black 1.png')">
+    </div>
+      </div>
+      <div class="col-4 d-flex align-items-center justify-content-center mb-5">
+        <div class="pre-img d-flex align-items-center justify-content-center">
+
+      <img style="background: #FFFCFC;cursor: pointer;" src="./nike-yellow 1.png" onclick="show_image('./nike-yellow 1.png')">
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-12 d-lg-none d-flex align-items-center justify-content-center mt-4 mb-4">
+  <p style="font-weight:bold;" class="p-0">$520</p>
+  <button class="ml-5" >BUY NOW </button>
+</div>
+</div>  
+<footer class="site-footer">
+  <div class="container mb-5">
+     <div class="row justify-content-between text-center">
+        <div class="col-2 pb-5 pt-5 "><a>FACEBOOK</a></div>
+        <div class="col-2 pb-5 pt-5 "><a>INSTAGRAM</a></div>
+        <div class="col-2 pb-5 pt-5"><a>YOUTUBE</a></div>
+        <div class="col-2 pb-5 pt-5"><a>TWITTER</a></div>
+        <div style="background-color: black; color:white;" class="col-2 pb-5 pt-5 ">
+          <a>EXPLORE MORE --> </i></a>
+        </div>
+     </div>
+  </div>         
+</footer>  
+
+<script>
+  function show_image(num){
+    document.getElementById("imageid").src=num;
+}
+</script>
+<script>
+  function myFunction() {
+    var x = document.getElementById("myLinks");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+  </script>
+</body>
+
+</html>    

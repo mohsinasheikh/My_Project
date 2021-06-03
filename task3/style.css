@@ -1,0 +1,364 @@
+/* Basic styling */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  body {
+    font-family: sans-serif;
+    font-size: 16px;
+    width: 98% !important;
+    height: 100%;
+  }
+  nav {
+    padding: 0 15px;
+  }
+  a {
+    color: black;
+    text-decoration: none;
+  }
+  p{
+    padding-left: 30%;
+
+  }
+  button{
+    margin-left: 30% !important;
+    background-color: #FE0606;
+    color: #fff !important;
+    border: none !important;
+    padding: 5px; 
+    
+    font-weight: 600 !important;
+
+  }
+  .firsth1{
+    font-weight: 1900;
+    margin-top: 40%;
+    /* padding: 50px; */
+  }
+  .secondh1{
+    position: absolute;
+    right: -13% ;
+    z-index: 5;
+    padding: 10px;
+    background: #fff;
+  }
+  .thirdh1{
+    margin-top: 30%;
+    /*font-size: 40px;*/
+  }
+  h1{
+    font-family: Roboto !important;
+    font-style: normal;
+    font-weight: bold !important;
+    padding-left: 30%;
+    font-size: 40px !important;
+    
+  }
+  .pre-img{
+    background: #FFFCFC;
+    width: 60px;
+    height: 50px;
+
+  }
+  .menu,
+  img {
+    vertical-align: -webkit-baseline-middle;
+    border-style: none;
+    height: 35px;
+    margin-right: 14px;  
+    margin-top: 10px;
+}
+  .logo1 {
+    
+    padding: 7.5px 10px 7.5px 0;
+  }
+  .item {
+    display: flex;
+    padding: 10px;
+  }
+  .item.button {
+    padding: 9px 5px;
+  }
+  .item:not(.button) a:hover,
+  .item a:hover::after {
+    color: #ccc;
+  }
+  /* Mobile menu */
+  .menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .menu li a {
+    display: block;
+    padding: 15px 5px;
+  }
+  .menu li.subitem a {
+    padding: 15px;
+  }
+  .toggle {
+    order: 1;
+    font-size: 20px;
+  }
+  .item.button {
+    order: 2;
+  }
+  .item {
+    order: 3;
+    width: 100%;
+    text-align: center;
+    display: none;
+  }
+  .active .item {
+    display: block;
+  }
+  .button.secondary {
+    /* divider between buttons and menu links */
+    border-bottom: 1px #444 solid;
+  }
+
+  /* Tablet menu */
+  @media all and (min-width: 700px) {
+    .menu {
+      justify-content: space-evenly;
+
+    }
+    .logo {
+      flex: 1;
+    }
+    .item.button {
+      width: auto;
+      order: 1;
+      display: block;
+    }
+    .toggle {
+      flex: 1;
+      text-align: right;
+      order: 2;
+    }
+    /* Button up from tablet screen */
+    .menu li.button a {
+      padding: 10px 15px;
+      margin: 5px 0;
+    }
+    .button a {
+      background: #0080ff;
+      border: 1px royalblue solid;
+    }
+    .button.secondary {
+      border: 0;
+    }
+    .button.secondary a {
+      background: transparent;
+      border: 1px #0080ff solid;
+    }
+    .button a:hover {
+      text-decoration: none;
+    }
+    .button:not(.secondary) a:hover {
+      background: royalblue;
+      border-color: darkblue;
+    }
+  }
+  /* Desktop menu */
+  @media all and (min-width: 992px) {
+    .menu {
+      align-items: flex-start;
+      flex-wrap: nowrap;
+      color: black !important;
+    }
+    .logo {
+      order: 0;
+      position: relative;
+
+    }
+    .item {
+      order: 1;
+      position: relative;
+      display: block;
+      width: auto;
+      
+    }
+    .item a{
+      color: #000000 !important;
+      font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+    }
+    .button {
+      order: 2;
+    }
+    header{
+      position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 5;
+    }
+    input[type=search]{
+        border: none;
+    }
+    input[type=search]:focus{
+      box-shadow:unset !important;
+      outline:unset !important;
+  }
+    .submenu-active .submenu {
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 68px;
+      color: #111;
+      background: #fff;
+    }
+    .toggle {
+      display: none;
+    }
+    .submenu-active {
+      border-radius: 0;
+    }
+  }
+  ul {
+    list-style-type: none;
+}
+.mobileheader{
+color:#fff !important;
+font-size: 25px !important;
+
+white-space: nowrap !important;
+}
+.mobileheader1{
+position: absolute;
+left: 0px;
+}
+.background{
+  background: #EEEAEA;
+}
+/*header  */
+/* footer */
+
+@media all and (max-width: 991px) {
+  .background{
+    background: rgba(0, 0, 0, 0.44);
+  }
+  .form-control {
+    width: 80% !important;
+  }
+  .toggle{
+    background: #EEEAEA;
+  }
+  .fas ,.fa-bars{
+    color: #000 !important;
+  }
+  .menu{
+    flex-wrap: unset !important;
+    margin-right: 0px !important;
+  }
+  nav{padding-right: 0px !important;}
+  .site-footer {
+    background: #000 !important;
+    color:#fff !important;
+    font-size: 7px !important;
+  font-weight: 400 !important;
+  }
+}
+.site-footer {
+  background: #ffff;
+  /* min-height: 120px; */
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+}
+/* site-footer */
+.justify-content-between {
+  justify-content: space-between!important;
+}
+.site-footer a, .site-footer p {
+  color: #000;
+}
+footer {
+  display: block;
+}
+@media (min-width: 1200px){
+.secondh1{
+  position: absolute;
+  right: -8%;
+  z-index: 5;
+  padding: 9px;
+  background: #fff;
+}
+.firsth1{
+  font-weight: 1900;
+  margin-top: 40%;
+  /* padding: 50px; */
+}
+
+.thirdh1{
+  margin-top: 30%;
+  /*font-size: 40px;*/
+}
+h1{
+  font-family: Roboto !important;
+  font-style: normal;
+  font-weight: bold !important;
+  padding-left: 30%;
+  font-size: 45px !important;
+}
+  img {
+    vertical-align: middle;
+    border-style: none;
+    height: 80px;
+}
+.pre-img{
+  margin-top: 34px;
+  background: #FFFCFC;
+  width: 126px;
+  height: 102px;
+
+}
+.logo1 {
+  padding: 7.5px 4px 45.5px 0px;
+}
+}
+@media(min-width: 1430px){
+  .secondh1{
+    position: absolute;
+    right: -10% ;
+    z-index: 5;
+    padding: 10px;
+    background: #fff;
+  }
+  .firsth1{
+    font-weight: 1900;
+    margin-top: 40%;
+    /* padding: 50px; */
+  }
+  
+  .thirdh1{
+    margin-top: 30%;
+    /*font-size: 40px;*/
+  }
+  h1{
+    font-family: Roboto !important;
+    font-style: normal;
+    font-weight: bold !important;
+    padding-left: 30%;
+    font-size: 55px !important;
+  }
+    img {
+      vertical-align: middle;
+      border-style: none;
+      height: 80px;
+  }
+  .pre-img{
+    margin-top: 34px;
+    background: #FFFCFC;
+    width: 126px;
+    height: 102px;
+
+  }
+  
+
+}
