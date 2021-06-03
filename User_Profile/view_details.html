@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0, user-scalable=0">
+    <meta http=equiv="X-UA-Corpalible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+ 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>  
+    <link rel="stylesheet" type="text/css" href="style.css">    
+    <script type="text/javascript" src="main.js"></script>
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    
+    <script>
+        var profileId = sessionStorage.getItem('profileId');
+        var Url = 'https://api.github.com/users/' + profileId;
+          fetch(Url) .then(response => response.json())
+          .then(json =>{
+              console.log(json,json.created_at,json['created_at'])
+              json['created_at'] = new Date(json['created_at']).toLocaleDateString(); 
+              json['updated_at'] = new Date(json['updated_at']).toLocaleDateString(); 
+            
+            w3.displayObject("id02", json)
+            
+    }
+          );
+    //     var profileId = sessionStorage.getItem('profileId');
+    //     console.log(profileId);
+    //     const request = new XMLHttpRequest();
+    //     request.open('GET', 'https://api.github.com/users', true);
+    //     request.onload = function() {
+    //     const data = JSON.parse(this.response);
+    //     var resultArray =data;
+    //     var resultArray1=[];
+    //     if (request.status >= 200 && request.status < 400) {
+    //     for( a = 0; a < resultArray.length; a++ ){
+    //     if(profileId ==resultArray[a].id){
+    //       var Data= resultArray[a]
+    //        console.log(Data)
+    //       w3.displayObject("id02", Data);
+
+    //       var post;
+    //       var Url = 'https://api.github.com/users/' + Data.login;
+    //       fetch(Url) .then(response => response.json())
+          
+    //       .then(json =>{
+    //         json['created_at'] = new Date(json['created_at']).toLocaleString(); 
+    //      json['updated_at'] = new Date(json['updated_at']).toLocalString();
+    //      w3.displayObject("id02", json)}
+          
+    //       );
+       
+    //    }
+    //     }
+    //     } else {
+    //     console.log('error');
+    //    }
+    //  };
+    // request.send();
+    </script>
+    <title> profile_Details </title>
+    </head>
+    <body>
+
+    <div class="container emp-profile" id="id02">
+            <form method="post" id="id02">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-img">
+                            <img src="{{avatar_url}}" alt=""/>
+                            
+                            <div class="card-footer p-0" id="id02"> 
+                                <div class="row text-center"> 
+                                    <div class="col-sm-6 border-right"> 
+                                        <div class="description-block">
+                                             <h5 class="description-header mb-1" >{{followers}}</h5>
+                                              <span class="text-muted">Followers</span>
+                                        </div> 
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="description-block">
+                                          <h5 class="description-header mb-1">{{following}}</h5>
+                                             <span class="text-muted">Following</span>
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="profile-head" id="id02">
+                                    <h5>
+                                        {{login}}
+                                    </h5>
+                                    <h6>
+                                        {{company || '-'}}
+                                    </h6>
+                                    <p class="proile-rating">RANKINGS : <span>8/10</span></p><br>
+                                    <button id="follow-button"> + Follow</button>
+                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item active">
+                                    <a class="nav-link " id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Timeline</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="profile-edit-btn" action="action" onclick="window.history.go(-1); return false;" value="Back" >Back</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-work">
+                            <p>CREATED AT</p>
+                            <a href="">{{created_at}}</a><br/>
+                            <p>Updated At</p>
+                            <a href="">{{updated_at}}</a><br/>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="tab-content profile-tab" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>User Id</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p> {{node_id}} </p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6" id="id02">
+                                                <label>Name</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p> {{name}} </p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Email</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{email || '-'}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Id</label>
+                                            </div>
+                                            <div class="col-md-6" >
+                                                <p id="id02">{{id}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Location</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{location || '-'}}</p>
+                                            </div>
+                                        </div>
+                            </div>
+                            <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Type</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{type}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row" >
+                                            <div class="col-md-6">
+                                                <label>Twitter Username</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{twitter_username || '-'}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Total Projects</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>230</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Gist code</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{public_gists}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>public Repos</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{public_repos}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                           <div class="col-md-6">
+                                              <label>Your Bio</label>
+                                           </div>
+                                           <div class="col-md-6">
+                                              <p>{{bio || '-'}}</p>
+                                           </div>
+                                        </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>           
+        </div>
+ </body>
+</html>
+        

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0, user-scalable=0">
+    <meta http=equiv="X-UA-Corpalible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+ 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>  
+    <link rel="stylesheet" type="text/css" href="style.css">    
+    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    
+    
+    <title> User_profile </title>
+</head>
+  <body>
+       <section>
+          <div class="row" id="collapseOne">
+          </div>
+       </section>
+       <script>
+           const request = new XMLHttpRequest();
+           request.open('GET', 'https://api.github.com/users', true);
+           request.onload = function() {
+           const data = JSON.parse(this.response);
+           if (request.status >= 200 && request.status < 400) {
+             data.forEach(resultArray => {
+             $("#collapseOne").append(
+          "<div class='item'>"+
+             "<div class='box'>" +
+                "<div class='slide-img'>" +
+                  "<div class='thumb-lg member-thumb mx-auto'>" +
+                   "<img class='rounded-circle img-thumbnail' src='" + resultArray.avatar_url + "'"+
+                  "</div>"+
+                "</div>"+
+                "<div class='detail-box'>"+
+                  "<div class='type'>"+
+                    "<a>"+resultArray.login+"</a>"+
+                  "</div>"+
+                    `<button type='button' class='btn btn-primary mt-3 btn-rounded waves-effect w-md waves-light' onclick='profileDelete ("${resultArray.login }");'>View</button>`+
+                "</div>"+
+             "</div> "+
+          "</div>"
+          );
+      
+         });
+         } else {
+           console.log('error');
+         }
+        };
+
+        request.send();
+       </script>
+       
+  </body>
+</html>
