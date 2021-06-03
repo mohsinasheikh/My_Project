@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0, user-scalable=0">
+    <meta http=equiv="X-UA-Corpalible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <title> Task4</title>
+    <script type="text/javascript" src="./min.js"></script>
+</head>
+    <body>
+     <p><strong>Summation of every number</strong></p>
+      <input type="number" id="val">
+      <input type ="Submit" onclick="run();">
+      <p id="results"></p>
+
+      <p><strong>Repeat_string</strong></p>
+      <input id="str">
+      <input id="num">
+      <input type ="Submit" onclick="string();">
+      <p id="result"></p>
+
+
+<p><strong>task 3</strong></p>
+      <input id="test">
+      <input type ="Submit" onclick="iq();">
+      <p id="res"></p>
+
+
+      <p><strong>Distinct List</strong></p>
+      <input id="list">
+      <input type ="Submit" onclick="Dlist();">
+      <p id="resul"></p>
+      
+
+      <p><strong>Fibonacci Sequence</strong></p>
+      <input type ="text" id="txtloop" />
+      <input type ="button" id ="btnEnter" value="Enter" onclick="fibonacci_series(txtloop.value)" />
+      <p id="output"></p>
+      <p id="demo"></p> 
+<script>
+    $("#txtloop").keypress(function(event) {
+            if (event.keyCode === 13) {
+                $("#btnEnter").click(fibonacci_series(txtloop.value));
+            }
+        });
+   
+</script>
+    </body>
+
+    
+    </html> 
