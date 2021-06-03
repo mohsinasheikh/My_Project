@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0, user-scalable=0">
+    <meta http=equiv="X-UA-Corpalible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./owl-carousel.css">
+    <script src="./owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title> Task2 </title>
+    
+</head>
+<body style="height: 100%;">
+    <header style="height: 100%;" class="main row">
+        <div class="container col-12 col-lg-7">
+            <nav class="main-nav">
+                <ul class="main-nav-list">
+                    <li>
+                        <a href="#">Smart</a>
+                    </li>
+                    <li>
+                        <a style="color: blueviolet;" href="#">Control</a>
+                    </li>
+                </ul>
+            </nav>  
+            <nav class="main-nav">
+                <ul class="main-nav-list">
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Feature</a>
+                    </li>
+                    <li>
+                        <a href="#">Blog</a>
+                    </li>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="12" height="12" viewBox="0 0 24 24" stroke-width="3" stroke="#a905b6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <circle cx="10" cy="10" r="7" />
+                        <line x1="21" y1="21" x2="15" y2="15" />
+                    </svg>
+                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                        <i class="fa fa-bars"style="position: absolute;top: 11%;right: 4%;"></i>
+                        
+                    </a>
+                </ul>
+                <div class="toggle p-0 d-lg-none " id="myTopnav" style="display: none;background:#EEEAEA;text-align: left !important">
+                    <ul style="position: absolute;z-index: 100;background: #f2edf9;right: 16px;height: 69%;width: 31%;padding-left: unset;margin-left: -27%;display: grid;">                    
+                      
+                      <li><a class="font-weight-bold" href="#" style="color: #000 ;padding: 10px;">Smart</a></li>
+                      <li><a class="font-weight-bold" href="#" style="color: #000;padding: 10px;">Control</a></li>
+                      <li><a class="font-weight-bold" href="#" style="color: #000;padding: 10px;">Home</a></li>
+                      <li><a class="font-weight-bold" href="#" style="color: #000;padding: 10px;">Feature</a></li>
+                      <li><a class="font-weight-bold" href="#" style="color: #000;padding: 10px;">Blog</a></li>
+
+                  </ul>
+                  </div>
+            </nav>
+            
+           
+      <div class="hero flex ml-5 item-center justify-between ">
+          
+          <div class="right flex-5 headingline ">
+              <h6 style="color: orange;">Smart Home App</h6><br>
+              <h1 class="">Created to make life much Easier</h1>
+              
+              <p class="mt-2">
+                  Smart Control is helping the users to achieve
+                  the best and comfortable atmosphere for their
+                  home.
+              </p>
+              <div class="header mt-5">
+                <input type="text" placeholder="Enter Your Email">
+                <button class="float-right trybun pt-2 pb-2">Try Now</button>
+                </div>
+           
+        </div>
+        </div>
+      
+        </div>
+        <div class="container headerslider col-12  col-lg-5">
+          <div class="row w-100">
+            <div class="col-12">
+            <button class="float-right loginbun pt-2 pb-2">Sign Up</button>
+            <button class="float-right loginbun pt-2 pb-2">Login</button>  
+          </div>
+          
+          <div class="col-12">
+            <div id="owl-demo" class="owl-carousel owl-theme">
+ 
+              <div class="item"><img src="./img.png" alt="The Last of us"></div>
+              <div class="item"><img src="./img.png" alt="GTA V"></div>
+              <div class="item"><img src="./img.png" alt="Mirror Edge"></div>
+             
+            </div>
+          </div>
+          </div>
+            
+        </div>
+    </header>
+  
+<script>
+  jQuery("#owl-demo").owlCarousel({
+  autoplay: true,
+  lazyLoad: true,
+  loop: true,
+  margin: 20,
+   /*
+  animateOut: 'fadeOut',
+  animateIn: 'fadeIn',
+  */
+  autoHeight: true,
+  autoplayTimeout: 7000,
+  smartSpeed: 800,
+  items: 1,
+  nav: true,
+});
+</script>
+
+    <script>
+        function myFunction() {
+          var x = document.getElementById("myTopnav");
+          if (x.style.display === "block") {
+            x.style.display = "none";
+          } else {
+            x.style.display = "block";
+          }
+        }
+        </script>
+</body> 
+</html>
