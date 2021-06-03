@@ -1,0 +1,65 @@
+body{
+	margin:0px;
+	padding: 0px;
+	background-color:#eef8ff;
+}
+
+input, label,select{
+	display: block;
+  }
+  .main{
+	display: flex;
+    justify-content: center;
+	top: 0px;
+  }
+  .btn-primary{
+	  width: 96%;
+	  border: none;
+  }
+  .box{
+	padding: 10px 23px;
+	justify-content: space-between;
+  }
+  .detail-box{
+      background: azure;
+	  margin-left: 15px;
+	  margin-bottom: 10px;
+	  text-align-last: revert;
+	  width:230px;
+	  box-shadow: 2px 2px 30px rgba(0,0,0,0.2);
+	  border-radius: 10px;
+	  overflow: hidden;
+	  margin: 25px;
+  }
+  label{
+	margin: 10px 0 5px;
+	font-family: arial;
+	font-size: 0.9em;
+  }
+td.delete_row {
+	text-align: center;
+  }
+  .delete_row:hover {
+	color: red;
+	cursor:pointer;
+  }
+table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 96%;
+	margin: 20px;
+  }
+  thead{
+	background: #337ab7;
+  }
+  td, th {
+	border: 1px solid #a69f9f;
+	text-align: left;
+	padding: 8px;
+  }
+  .btn1 {
+	  margin-left: 10px;
+  }
+  .btn2 {
+	  margin-left: 10px;
+  }

@@ -1,0 +1,131 @@
+
+  <!DOCTYPE html>
+  <html lang="en">
+  
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, intial-scale=1.0, user-scalable=0">
+      <meta http=equiv="X-UA-Corpalible" content="ie=edge">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>  
+      <link rel="stylesheet" type="text/css" href="css/style.css">    
+      <script type="text/javascript" src="js/main.js"></script>
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+      <title> Addproduct </title>
+      </head>
+      <body>
+     
+ <section>
+      
+     
+   <div class="main">
+        <form class="detail-box" action="">
+        <div class="box">
+        <label>Product Name:</label>
+        <input type="text"  name="name" value="" id="name" onkeyup="manage(this)" required>
+  
+        <label>Quantity:</label>
+        <input class="input" type="number" value="" name="Quantity" id="Quantity" min="1" maxlength="3" onkeyup="manage(this)" required>
+        <p id="validationQuentity" style="display: none; color: red;font-size: 8px;">Quantity must be GREATER THEN 1</p>
+        <small id="alert-username"></small>
+        <label>price:</label>
+        <input type="number" name="price" min="1" value="" onkeyup="manage(this)" maxlength="3" id="price" required><br>
+        <p id="validationprice" style="display: none;color: red;">price must be GREATER THEN 1</p>
+        
+        <button type="button"  class="btn btn-primary button" onclick="productAddToTable(this)" id="submitbutton" disabled>Add Data</button>
+
+        </div>
+        </form>
+   </div>
+   <div>
+     <table id="productTable">
+          <thead>
+          <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Status</th>
+            <th>Action</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th>Remove</th>
+          </tr>
+          </thead>
+       <tbody>
+          <tr>
+            <td>Test</td>
+            <td>$60</td>
+            <td>InStock</td>
+            <td><button onclick='deductQuantity(this)'>-</button>
+            <button class='btn1' onclick='addquantity(this)'>+</button></td>
+            <td>1</td>
+            <td>$60</td>
+            <td>
+               <button type='button' onclick='productDelete(this);' class='delete_row'>x</button>
+            </td>
+          </tr>
+       </tbody>
+    </table>
+    </div>
+ </section>
+
+<script>
+    	function manage(txt) {
+        var bt = document.getElementById('submitbutton');
+        var name = document.getElementById('name').value;
+        var Quantity = document.getElementById('Quantity').value;
+        var price = document.getElementById('price').value;
+        console.log(name,Quantity,price)
+
+
+        if(Quantity != '' && Quantity>0 && price>0 && name != '' && price !=''){
+          console.log(name,Quantity,price)
+            bt.disabled = false;
+            
+            var x = document.getElementById("validationQuentity");
+            var y = document.getElementById("validationPrice");
+            y.style.display = "none";
+            x.style.display = "none";
+           }
+        else if(Quantity<0){
+            console.log(name,Quantity,price)
+            var x = document.getElementById("validationQuentity");
+
+        if(x.style.display == "none") {
+               x.style.display = "block";
+          }
+        else{
+            x.style.display = "none";
+        }
+      
+            console.log(x.style.display)
+        } 
+        else if(price<0){
+            console.log(name,Quantity,price)
+            var y = document.getElementById("validationPrice");
+        if(y.style.display == "none"){
+          y.style.display = "block";
+     }
+        else{
+            y.style.display = "none";
+    }
+            console.log(y.style.display)
+        }
+        else{
+            console.log(name,Quantity,price)
+          
+            var x = document.getElementById("validationQuentity");
+            var y = document.getElementById("validationPrice");
+            y.style.display = "none";
+            x.style.display = "none";
+            bt.disabled = true;
+        }
+    }    
+
+
+  </script>
+  
+  </body>
+  </html>
+
+ 
